@@ -7,7 +7,7 @@ node {
           
      }
      stage('Push image') {
-         docker.withRegistry('https://registry.hub.docker.com', 'ktos5427') {
+         docker.withRegistry('https://registry.hub.docker.com', 'docker-hub') {
              app.push("${env.BUILD_NUMBER}")
              app.push("latest")
          }
@@ -19,7 +19,7 @@ stage('Build image') {
 }
 
 stage('Push image') {
-  docker.withRegistry('https://registry.hub.docker.com', 'ktos5427') 
+  docker.withRegistry('https://registry.hub.docker.com', 'docker-hub') 
   {
      app.push("${env.BUILD_NUMBER}")
      app.push("latest")
