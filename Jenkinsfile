@@ -4,7 +4,6 @@ node {
      }
      stage('Build image') {
          app = docker.build("ktos5427/jenkins-flask-example")
-          
      }
      stage('Push image') {
          docker.withRegistry('https://registry.hub.docker.com', 'ktos5427') {
