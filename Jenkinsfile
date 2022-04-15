@@ -3,8 +3,7 @@ node {
          checkout scm
      }
      stage('Build image') {
-         app = docker.build("choikangseok/jenkins-flask-example")
-         
+         app = docker.build("ktos5427/jenkins-flask-example")
      }
      stage('Push image') {
          docker.withRegistry('https://registry.hub.docker.com', 'ktos5427') {
@@ -15,7 +14,7 @@ node {
 }
 
 stage('Build image') {
-  app = docker.build("choikangseok/jenkins-flask-example")
+  app = docker.build("ktos5427/jenkins-flask-example")
 }
 
 stage('Push image') {
